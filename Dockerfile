@@ -8,7 +8,9 @@ RUN apt update && apt upgrade -y && \
     libreadline-dev libpcre++-dev -y
 
 RUN git clone https://github.com/meganz/sdk
+
 WORKDIR /sdk
+
 RUN ./autogen.sh
 RUN ./configure --enable-java --with-java-include-dir=/usr/local/openjdk-8/include
 RUN make & make install
