@@ -17,5 +17,6 @@ RUN make & make install
 
 FROM openjdk:8-jre-slim
 
+COPY --from=build /sdk/bindings/java/nz/mega/sdk /root/sdk
 COPY --from=build /lib /lib
 COPY --from=build /usr/lib /usr/lib
